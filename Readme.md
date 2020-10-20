@@ -13,7 +13,7 @@ This program is very similar to [RegJump](https://docs.microsoft.com/en-us/sysin
 
 Source: https://github.com/jackdp/RegJump
 
-Compiled binaries (Windows 32-bit and 64-bit): http://www.pazera-software.com/products/regjump/
+Compiled binaries (Windows 32-bit and 64-bit): https://www.pazera-software.com/products/regjump/
 
 
 ## Usage
@@ -26,7 +26,7 @@ Compiled binaries (Windows 32-bit and 64-bit): http://www.pazera-software.com/pr
 HKEY_CURRENT_USER\SOFTWARE  
 "HKEY_CURRENT_USER\some key"  
 HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit  
-HKEY_CLASSES_ROOT\.txt
+HKEY_CLASSES_ROOT\\.txt
 
 | Option         | Description               |
 |----------------|---------------------------|
