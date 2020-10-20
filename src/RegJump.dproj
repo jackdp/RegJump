@@ -1,0 +1,219 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Base>True</Base>
+        <AppType>Console</AppType>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <FrameworkType>None</FrameworkType>
+        <MainSource>RegJump.dpr</MainSource>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <ProjectGuid>{CB868E98-4B0C-4631-95BE-E06112032006}</ProjectGuid>
+        <ProjectVersion>16.1</ProjectVersion>
+        <TargetedPlatforms>3</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX32' and '$(Base)'=='true') or '$(Base_OSX32)'!=''">
+        <Base>true</Base>
+        <CfgParent>Base</CfgParent>
+        <Base_OSX32>true</Base_OSX32>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base>true</Base>
+        <CfgParent>Base</CfgParent>
+        <Base_Win32>true</Base_Win32>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base>true</Base>
+        <CfgParent>Base</CfgParent>
+        <Base_Win64>true</Base_Win64>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Base>true</Base>
+        <CfgParent>Base</CfgParent>
+        <Cfg_1>true</Cfg_1>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Base>true</Base>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Base>true</Base>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Base>true</Base>
+        <CfgParent>Base</CfgParent>
+        <Cfg_2>true</Cfg_2>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Base>true</Base>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Base>true</Base>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSX32)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;fmx;IndySystem;DBXInterBaseDriver;DataSnapCommon;DbxCommonDriver;dbxcds;CustomIPTransport;dsnap;IndyIPServer;fmxase;IndyCore;IndyIPCommon;inetdbxpress;bindcompfmx;rtl;dbrtl;DbxClientDriver;bindcomp;inetdb;xmlrtl;ibxpress;IndyProtocols;DBXMySQLDriver;bindengine;soaprtl;bindcompdbx;inet;fmxobj;fmxdae;dbexpress;IndyIPClient;$(DCC_UsePackage)</DCC_UsePackage>
+        <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>RegJump</SanitizedProjectName>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_ExeOutput>..\</DCC_ExeOutput>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_N>false</DCC_N>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_S>false</DCC_S>
+        <Manifest_File>None</Manifest_File>
+        <VerInfo_Keys>CompanyName=pazera-software.com;FileDescription=RegJump;FileVersion=1.0.0.0;InternalName=RegJump;LegalCopyright=Jacek Pazera;LegalTrademarks=Jacek Pazera;OriginalFilename=regjump.exe;ProductName=RegJump;ProductVersion=1.0.0.0;Comments=https://www.pazera-software.com</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_UsePackage>JvBDE;JvGlobus;FlatStyle;JvMM;NxGrid6Run_dxe3;JvManagedThreads;tmsexdxe3;NxGridDsgn_dxe3;pkCindyDBXDXE3;DBXSqliteDriver;JP.TMS;fmx;JvDlgs;IndySystem;NxGrid6Dsgn_dxe3;TeeDB;JPLib;JvCrypt;vclib;inetdbbde;DBXInterBaseDriver;FrameViewerXE3;DataSnapCommon;ShellFolders_Dsgn;pkCindyPackDXE3;JvNet;JvDotNetCtrls;SynEdit_R;DbxCommonDriver;vclimg;dbxcds;vclshlctrls;MetropolisUILiveTile;NxDBGridDsgn_dxe3;JvXPCtrls;NxLayout6Run_dxe3;vcldb;vcldsnap;jack;tb2k_XE3;KleverComponents;JPRPack;CustomIPTransport;JvCore;NxDBGridRun_dxe3;vclribbon;GR32_D;dsnap;IndyIPServer;fmxase;vcl;IndyCore;CodeSiteExpressPkg;IndyIPCommon;CloudService;FmxTeeUI;JPFlat;tmswizdxe3;JvAppFrm;NxDBGrid6Run_dxe3;JvDB;JvRuntimeDesign;inetdbxpress;webdsnap;JP.Nx5;NxStandard6Run_dxe3;JclDeveloperTools;NxCollectionRun_dxe3;JPEssentials;JP.Nx6;JPPack;IGDIPlusMod;adortl;JvDocking;CnPack_DXE3;JvWizards;NxCollectionDsgn_dxe3;NxGridRun_dxe3;MyIDEExt;NxCommonDsgn_dxe3;NxInspector6Run_dxe3;JvHMI;NxCommonRun_dxe3;bindcompfmx;WindowState;NxStandard6Dsgn_dxe3;vcldbx;JvBands;ImageWork;rtl;dbrtl;DbxClientDriver;JPPegTop;bindcomp;inetdb;GR32_R;JvPluginSystem;Tee;JclContainers;DropFiles_Run;NxAddonsRun_dxe3;JvCmp;JvSystem;xmlrtl;svnui;ibxpress;JvTimeFramework;NxSheetRun_dxe3;JvControls;tmsdxe3;IndyProtocols;DBXMySQLDriver;VersionInfo;vclactnband;bindengine;soaprtl;bindcompdbx;FMXTee;TeeUI;bindcompvcl;DzHTMLText2;JvStdCtrls;Jcl;vclie;JvCustom;JvJans;JvPageComps;JvPrintPreview;vcltouch;DropFiles_Dsgn;DragDropDXE3;websnap;PngComponents;NxDBGrid6Dsgn_dxe3;pkCindyDBCtrlsPackDXE3;VclSmp;Intraweb;NxInspectorRun_dxe3;JPJVCL;dsnapcon;inet;NxCollection6Run_dxe3;fmxobj;JclVcl;JvPascalInterpreter;VCL_Image32;vclx;svn;fmxdae;tmsxlsdxe3;NxInspectorDsgn_dxe3;bdertl;VirtualTreesR;dbexpress;ShellFolders_Run;SpTBXLib;IndyIPClient;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_UsePackage>NxGrid6Run_dxe3;tmsexdxe3;NxGridDsgn_dxe3;DBXSqliteDriver;JP.TMS;fmx;IndySystem;TeeDB;JPLib;vclib;DBXInterBaseDriver;DataSnapCommon;DbxCommonDriver;vclimg;dbxcds;NxDBGridDsgn_dxe3;NxLayout6Run_dxe3;vcldb;vcldsnap;CustomIPTransport;NxDBGridRun_dxe3;dsnap;IndyIPServer;fmxase;vcl;IndyCore;IndyIPCommon;NxDBGrid6Run_dxe3;inetdbxpress;webdsnap;NxStandard6Run_dxe3;NxCollectionRun_dxe3;JPEssentials;JPPack;IGDIPlusMod;adortl;NxCollectionDsgn_dxe3;NxGridRun_dxe3;NxCommonDsgn_dxe3;NxInspector6Run_dxe3;NxCommonRun_dxe3;bindcompfmx;rtl;dbrtl;DbxClientDriver;JPPegTop;bindcomp;inetdb;Tee;DropFiles_Run;NxAddonsRun_dxe3;xmlrtl;ibxpress;NxSheetRun_dxe3;tmsdxe3;IndyProtocols;DBXMySQLDriver;vclactnband;bindengine;soaprtl;bindcompdbx;TeeUI;bindcompvcl;vclie;vcltouch;DragDropDXE3;websnap;PngComponents;VclSmp;NxInspectorRun_dxe3;dsnapcon;inet;NxCollection6Run_dxe3;fmxobj;vclx;fmxdae;tmsxlsdxe3;NxInspectorDsgn_dxe3;dbexpress;ShellFolders_Run;SpTBXLib;IndyIPClient;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_DcuOutput>..\dcu32_debug</DCC_DcuOutput>
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        <Manifest_File>admin.manifest</Manifest_File>
+        <OutputExt>32_debug.exe</OutputExt>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>FileVersion=1.0.0.0;ProductName=RegJump;ProductVersion=1.0.0.0;CompanyName=pazera-software.com;LegalCopyright=Jacek Pazera;LegalTrademarks=Jacek Pazera;FileDescription=RegJump - Jump to registry key from the console;InternalName=RegJump;Comments=https://www.pazera-software.com;OriginalFilename=regjump.exe</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_DcuOutput>..\dcu32</DCC_DcuOutput>
+        <DCC_ExeOutput>..\</DCC_ExeOutput>
+        <Manifest_File>admin.manifest</Manifest_File>
+        <OutputExt>32.exe</OutputExt>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <DCC_DcuOutput>..\dcu64</DCC_DcuOutput>
+        <Manifest_File>admin.manifest</Manifest_File>
+        <OutputExt>64.exe</OutputExt>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="RJMP.Procs.pas"/>
+        <DCCReference Include="RJMP.Types.pas"/>
+        <DCCReference Include="RJMP.Console.pas"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1033</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                    <VersionInfoKeys Name="CFBundleName"/>
+                    <VersionInfoKeys Name="CFBundleDisplayName"/>
+                    <VersionInfoKeys Name="CFBundleIdentifier"/>
+                    <VersionInfoKeys Name="CFBundleVersion"/>
+                    <VersionInfoKeys Name="CFBundlePackageType"/>
+                    <VersionInfoKeys Name="CFBundleSignature"/>
+                    <VersionInfoKeys Name="CFBundleAllowMixedLocalizations"/>
+                    <VersionInfoKeys Name="CFBundleExecutable"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">RegJump.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclMetropolisUILiveTile210.bpl">Embarcadero Metropolis UI Live Tile Standard Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k210.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp210.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Embarcadero\Packs\TeeGrid\Compiled\Delphi21.win32\Bin\DCLFMXTeeGrid21.bpl">File E:\Embarcadero\Packs\TeeGrid\Compiled\Delphi21.win32\Bin\DCLFMXTeeGrid21.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Embarcadero\Packs\TeeGrid\Compiled\Delphi21.win32\Bin\DCLVCLTeeGrid21.bpl">File E:\Embarcadero\Packs\TeeGrid\Compiled\Delphi21.win32\Bin\DCLVCLTeeGrid21.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Embarcadero\XE7\BPL\Win32\AsyncProDDXE7.bpl">File E:\Embarcadero\XE7\BPL\Win32\AsyncProDDXE7.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Embarcadero\XE7\BPL\Win32\EsGroupBar_XE7.bpl">TEsPageBar control</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Embarcadero\XE7\BPL\Win32\JPLibXE7.bpl">JPLib Runtime Package</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Embarcadero\XE7\BPL\Win32\VirtualShellToolsDDXE7.bpl">Virtual Shell Tools Delphi Designtime Package</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Embarcadero\XE7\BPL\Win32\acntDelphiXE7.bpl">File E:\Embarcadero\XE7\BPL\Win32\acntDelphiXE7.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Program Files (x86)\FastReports\LibD21\dclfrx21.bpl">File E:\Program Files (x86)\FastReports\LibD21\dclfrx21.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Program Files (x86)\FastReports\LibD21\dclfrxDB21.bpl">File E:\Program Files (x86)\FastReports\LibD21\dclfrxDB21.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Program Files (x86)\FastReports\LibD21\dclfrxe21.bpl">File E:\Program Files (x86)\FastReports\LibD21\dclfrxe21.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Program Files (x86)\FastReports\LibD21\dclfrxtee21.bpl">File E:\Program Files (x86)\FastReports\LibD21\dclfrxtee21.bpl not found</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment/>
+            <Platforms>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+</Project>
